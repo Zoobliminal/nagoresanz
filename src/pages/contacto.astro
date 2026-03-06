@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contacto"
+  description="Contacta con Nagore Sanz, coach personal y ejecutiva en Arteixo, A Coruña. Reserva tu sesión de coaching o solicita información."
+>
+
+  <section class="page-hero" id="page-hero-contact">
+    <div class="container">
+      <span class="page-hero__overline fade-in">Contacto</span>
+      <h1 class="page-hero__title fade-in delay-1">Hablemos</h1>
+      <p class="page-hero__subtitle fade-in delay-2">
+        El primer paso hacia tu transformación empieza aquí
+      </p>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact-section">
+    <div class="container">
+      <div class="contact__grid">
+
+        <!-- Contact Info -->
+        <div class="contact__info fade-in-left">
+          <h2>Ponte en <span class="text-sage">contacto</span></h2>
+          <div class="divider" style="margin-left:0"></div>
+          <p>
+            ¿Tienes preguntas sobre mis servicios? ¿Quieres reservar una sesión de descubrimiento? 
+            No dudes en escribirme. Estaré encantada de ayudarte.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail" id="contact-address">
+              <div class="contact__detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4>Ubicación</h4>
+                <p>Av. de Santo Estevo de Morás<br>15142 Arteixo, A Coruña</p>
+              </div>
+            </div>
+
+            <div class="contact__detail" id="contact-phone">
+              <div class="contact__detail-icon contact__detail-icon--golden">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Teléfono</h4>
+                <a href="tel:+34666146052">+34 666 14 60 52</a>
+              </div>
+            </div>
+
+            <div class="contact__detail" id="contact-hours">
+              <div class="contact__detail-icon contact__detail-icon--lavender">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4>Horario</h4>
+                <p>Lunes a Viernes: 10:00 – 19:30<br>Con cita previa</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__social">
+            <h4>Sígueme en redes</h4>
+            <div class="contact__social-links">
+              <a href="https://www.instagram.com/nagoresanz_coach" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="Instagram">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@nagoresanz_coach</span>
+              </a>
+              <a href="https://www.linkedin.com/in/nagoresanz" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>PSICOLISTICA NGM</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact__form-wrapper fade-in-right">
+          <form class="contact__form glass-card" id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+            <h3>Envíame un mensaje</h3>
+            <p class="contact__form-subtitle">Respondo en menos de 24 horas laborables.</p>
+
+            <div class="contact__form-group">
+              <label for="name">Nombre completo *</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+
+            <div class="contact__form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+
+            <div class="contact__form-group">
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
+            </div>
+
+            <div class="contact__form-group">
+              <label for="service">Servicio de interés</label>
+              <select id="service" name="service">
+                <option value="">Selecciona un servicio</option>
+                <option value="personal">Coaching Personal</option>
+                <option value="ejecutivo">Coaching Ejecutivo</option>
+                <option value="formacion">Formación y Talleres</option>
+                <option value="psicolistica">Metodología PSICOLISTICA</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="contact__form-group">
+              <label for="message">Mensaje *</label>
+              <textarea id="message" name="message" required rows="5" placeholder="Cuéntame cómo puedo ayudarte..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary contact__form-submit" id="submit-btn">
+              Enviar mensaje
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section" id="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23250.76!2d-8.51!3d43.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7f0e0e0e0e01%3A0x0!2sArteixo%2C%20A%20Coru%C3%B1a!5e0!3m2!1ses!2ses!4v1"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación de Nagore Sanz en Arteixo, A Coruña"
+    ></iframe>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-3xl);
+    text-align: center;
+    background: var(--gradient-warm);
+  }
+  .page-hero__overline {
+    display: inline-block; font-size: var(--text-xs); font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-golden); margin-bottom: var(--space-md);
+  }
+  .page-hero__title { font-size: var(--text-4xl); margin-bottom: var(--space-lg); }
+  .page-hero__subtitle {
+    font-family: var(--font-subheading); font-size: var(--text-xl); font-style: italic;
+    color: var(--color-sage); max-width: 500px; margin: 0 auto;
+  }
+
+  /* Contact Grid */
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-4xl);
+    align-items: flex-start;
+  }
+
+  .contact__info h2 { margin-bottom: var(--space-sm); }
+
+  .contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .contact__detail {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .contact__detail-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-lg);
+    background: rgba(124, 154, 130, 0.1);
+    color: var(--color-sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact__detail-icon--golden { background: rgba(196,149,106,0.1); color: var(--color-golden); }
+  .contact__detail-icon--lavender { background: rgba(184,169,201,0.1); color: var(--color-lavender); }
+
+  .contact__detail h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__detail p,
+  .contact__detail a {
+    font-size: var(--text-sm);
+    color: var(--color-charcoal);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .contact__detail a:hover { color: var(--color-golden); }
+
+  /* Social */
+  .contact__social { margin-top: var(--space-2xl); }
+  .contact__social h4 { font-size: var(--text-sm); margin-bottom: var(--space-md); }
+
+  .contact__social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact__social-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--color-charcoal);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .contact__social-link:hover {
+    color: var(--color-sage);
+    transform: translateX(4px);
+  }
+
+  /* Form */
+  .contact__form {
+    padding: var(--space-2xl);
+  }
+
+  .contact__form h3 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__form-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-sage);
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact__form-group {
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact__form-group label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-forest);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__form-group input,
+  .contact__form-group select,
+  .contact__form-group textarea {
+    width: 100%;
+    padding: var(--space-md) var(--space-lg);
+    border: 2px solid rgba(124, 154, 130, 0.15);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-charcoal);
+    background: var(--color-ivory);
+    transition: all var(--transition-fast);
+    outline: none;
+  }
+
+  .contact__form-group input:focus,
+  .contact__form-group select:focus,
+  .contact__form-group textarea:focus {
+    border-color: var(--color-sage);
+    box-shadow: 0 0 0 3px rgba(124, 154, 130, 0.1);
+  }
+
+  .contact__form-group input::placeholder,
+  .contact__form-group textarea::placeholder {
+    color: var(--color-charcoal);
+    opacity: 0.4;
+  }
+
+  .contact__form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%237C9A82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-md) center;
+    padding-right: var(--space-2xl);
+  }
+
+  .contact__form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact__form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Map */
+  .map-section {
+    line-height: 0;
+  }
+
+  .map-section iframe {
+    filter: grayscale(30%) contrast(1.1);
+    transition: filter var(--transition-base);
+  }
+
+  .map-section iframe:hover {
+    filter: grayscale(0%) contrast(1);
+  }
+
+  @media (max-width: 768px) {
+    .contact__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .contact__info { text-align: center; }
+    .contact__details { align-items: center; }
+    .contact__detail { flex-direction: column; align-items: center; text-align: center; }
+    .contact__social { text-align: center; }
+    .contact__social-links { align-items: center; }
+  }
+</style>

@@ -1,0 +1,101 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'Nagore Sanz — Coach Personal y Ejecutiva certificada ICC. Acompañamiento profesional en coaching, psicología y bienestar holístico en Arteixo, A Coruña.',
+  ogImage = '/og-image.jpg',
+} = Astro.props;
+
+const fullTitle = title === 'Inicio' ? 'Nagore Sanz | Coach Personal & Ejecutivo | PSICOLISTICA' : `${title} | Nagore Sanz Coach`;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="author" content="Nagore Sanz" />
+  <meta name="keywords" content="coach personal, coaching ejecutivo, PSICOLISTICA, psicología, bienestar, Arteixo, A Coruña, Nagore Sanz, coaching holístico, desarrollo personal" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Nagore Sanz Coach" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Nagore Sanz — Coach & PSICOLISTICA",
+    "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Santo Estevo de Morás",
+      "addressLocality": "Arteixo",
+      "addressRegion": "A Coruña",
+      "postalCode": "15142",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34666146052",
+    "openingHours": "Mo-Fr 10:00-19:30",
+    "url": "https://nagoresanz.com",
+    "sameAs": [
+      "https://www.instagram.com/nagoresanz_coach",
+      "https://www.linkedin.com/in/nagoresanz"
+    ]
+  })} />
+
+  <title>{fullTitle}</title>
+</head>
+<body>
+  <Header />
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- Scroll Animation Observer -->
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in').forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

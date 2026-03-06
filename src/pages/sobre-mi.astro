@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Sobre Mí"
+  description="Conoce a Nagore Sanz, coach personal y ejecutiva certificada ICC. Descubre su historia, filosofía de trabajo y metodología PSICOLISTICA."
+>
+
+  <!-- Page Header -->
+  <section class="page-hero" id="page-hero-about">
+    <div class="container">
+      <span class="page-hero__overline fade-in">Sobre Mí</span>
+      <h1 class="page-hero__title fade-in delay-1">Conoce a Nagore</h1>
+      <p class="page-hero__subtitle fade-in delay-2">
+        Mi camino hacia el coaching y el bienestar integral
+      </p>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="about section" id="about-content">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-col fade-in-left">
+          <div class="about__image">
+            <div class="about__image-placeholder">
+              <span>🌿</span>
+              <p>Nagore Sanz</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__text-col fade-in-right">
+          <h2>Mi <span class="text-sage">historia</span></h2>
+          <div class="divider" style="margin-left:0"></div>
+
+          <p>
+            Soy Nagore Sanz, coach personal y ejecutiva con base en <strong>Arteixo, A Coruña</strong>. 
+            Mi pasión por el desarrollo humano me llevó a formarme como coach certificada a través 
+            de la <strong>International Coaching Community (ICC)</strong> y la <strong>Universidad de A Coruña</strong>.
+          </p>
+
+          <p>
+            A lo largo de mi trayectoria, he trabajado con personas, equipos y organizaciones, 
+            ayudándoles a descubrir su potencial y a transformar sus vidas tanto a nivel profesional 
+            como personal.
+          </p>
+
+          <p>
+            Mi enfoque se diferencia por integrar una perspectiva <strong>holística</strong>, 
+            donde la psicología, el coaching y el bienestar espiritual se unen para ofrecer 
+            un acompañamiento completo. Esta visión dio origen a <strong>PSICOLISTICA</strong>, 
+            mi metodología propia que aborda el bienestar desde todas sus dimensiones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values section section--alt" id="values">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="overline">Filosofía</span>
+        <h2>Mis valores</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="values__grid">
+        <div class="values__card glass-card fade-in delay-1">
+          <span class="values__icon">🤝</span>
+          <h3>Autenticidad</h3>
+          <p>Creo en la honestidad y la transparencia como base de cualquier proceso de transformación.</p>
+        </div>
+        <div class="values__card glass-card fade-in delay-2">
+          <span class="values__icon">🌱</span>
+          <h3>Crecimiento</h3>
+          <p>Cada persona tiene un potencial infinito. Mi misión es ayudarte a descubrirlo y desarrollarlo.</p>
+        </div>
+        <div class="values__card glass-card fade-in delay-3">
+          <span class="values__icon">💫</span>
+          <h3>Integralidad</h3>
+          <p>El bienestar verdadero abarca mente, cuerpo y espíritu. Trabajo con todas las dimensiones del ser.</p>
+        </div>
+        <div class="values__card glass-card fade-in delay-4">
+          <span class="values__icon">🎯</span>
+          <h3>Compromiso</h3>
+          <p>Me comprometo con cada proceso como si fuera propio, acompañándote con dedicación total.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="credentials section" id="credenciales">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="overline">Formación</span>
+        <h2>Credenciales y certificaciones</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="credentials__grid">
+        <div class="credentials__item fade-in delay-1">
+          <div class="credentials__badge">ICC</div>
+          <div class="credentials__info">
+            <h4>International Coaching Community</h4>
+            <p>Coach Certificada — Estándares internacionales de excelencia en coaching profesional.</p>
+          </div>
+        </div>
+        <div class="credentials__item fade-in delay-2">
+          <div class="credentials__badge credentials__badge--golden">UDC</div>
+          <div class="credentials__info">
+            <h4>Universidad de A Coruña</h4>
+            <p>Formación universitaria en coaching — Rigor académico y base científica.</p>
+          </div>
+        </div>
+        <div class="credentials__item fade-in delay-3">
+          <div class="credentials__badge credentials__badge--lavender">PSI</div>
+          <div class="credentials__info">
+            <h4>PSICOLISTICA NGM</h4>
+            <p>Metodología propia — Integración de psicología y coaching para bienestar holístico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="page-cta" id="about-cta">
+    <div class="container text-center">
+      <h2 class="fade-in">¿Quieres saber cómo puedo ayudarte?</h2>
+      <p class="fade-in delay-1">Descubre mis servicios o reserva una sesión de descubrimiento.</p>
+      <div class="page-cta__buttons fade-in delay-2">
+        <a href="/servicios" class="btn btn--primary">Ver Servicios</a>
+        <a href="/contacto" class="btn btn--secondary">Contactar</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-3xl);
+    text-align: center;
+    background: var(--gradient-warm);
+  }
+
+  .page-hero__overline {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-golden);
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-subheading);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--color-sage);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* About */
+  .about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+
+  .about__image-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--gradient-warm);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    border: 2px solid rgba(124,154,130,0.1);
+    font-size: 4rem;
+  }
+
+  .about__image-placeholder p {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    color: var(--color-forest);
+    font-weight: 600;
+  }
+
+  /* Values */
+  .values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .values__card {
+    padding: var(--space-2xl);
+    text-align: center;
+  }
+
+  .values__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .values__card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .values__card p {
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Credentials */
+  .credentials__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .credentials__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .credentials__item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(8px);
+  }
+
+  .credentials__badge {
+    width: 70px;
+    height: 70px;
+    border-radius: var(--radius-lg);
+    background: var(--color-sage);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+  }
+
+  .credentials__badge--golden { background: var(--color-golden); }
+  .credentials__badge--lavender { background: var(--color-lavender); }
+
+  .credentials__info h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-xs);
+  }
+
+  .credentials__info p {
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Page CTA */
+  .page-cta {
+    padding: var(--space-4xl) 0;
+    background: var(--color-sand);
+  }
+
+  .page-cta h2 { margin-bottom: var(--space-md); }
+  .page-cta p { font-size: var(--text-lg); color: var(--color-charcoal); opacity: 0.8; }
+
+  .page-cta__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-xl);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about__grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .about__image-col { max-width: 350px; margin: 0 auto; }
+    .about__text-col { text-align: center; }
+    .values__grid { grid-template-columns: 1fr 1fr; }
+    .credentials__item { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .values__grid { grid-template-columns: 1fr; }
+  }
+</style>

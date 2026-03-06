@@ -1,0 +1,1065 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Inicio">
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__particles">
+        <span class="hero__particle"></span>
+        <span class="hero__particle"></span>
+        <span class="hero__particle"></span>
+        <span class="hero__particle"></span>
+        <span class="hero__particle"></span>
+      </div>
+    </div>
+
+    <div class="hero__content container">
+      <div class="hero__text">
+        <span class="hero__overline fade-in">🌿 Coach Certificada ICC</span>
+        <h1 class="hero__title fade-in delay-1">
+          Transforma tu vida<br>
+          <span class="hero__title-accent">desde el interior</span>
+        </h1>
+        <p class="hero__subtitle fade-in delay-2">
+          Acompañamiento profesional en coaching personal, ejecutivo y holístico. 
+          Descubre tu potencial con un enfoque integral que une psicología, 
+          coaching y bienestar espiritual.
+        </p>
+        <div class="hero__ctas fade-in delay-3">
+          <a href="/contacto" class="btn btn--primary btn--lg">
+            Reserva tu sesión
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="/sobre-mi" class="btn btn--secondary">
+            Conóceme
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual fade-in delay-2">
+        <div class="hero__image-frame">
+          <div class="hero__image-placeholder">
+            <div class="hero__image-icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.3">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <span>Nagore Sanz</span>
+            </div>
+          </div>
+          <div class="hero__image-decoration"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <span>Descubre más</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== INTRO / ABOUT PREVIEW ===== -->
+  <section class="intro section" id="intro">
+    <div class="container">
+      <div class="intro__grid">
+        <div class="intro__image-col fade-in-left">
+          <div class="intro__image-wrapper">
+            <div class="intro__image-placeholder">
+              <span>🧘‍♀️</span>
+            </div>
+            <div class="intro__experience-badge">
+              <span class="intro__experience-number">ICC</span>
+              <span class="intro__experience-text">Coach<br>Certificada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro__text-col fade-in-right">
+          <span class="section-header__overline">SOBRE MÍ</span>
+          <h2>Hola, soy <span class="text-sage">Nagore</span></h2>
+          <div class="divider" style="margin-left: 0;"></div>
+          <p class="intro__lead">
+            Coach personal y ejecutiva certificada por la <strong>International Coaching Community (ICC)</strong> 
+            y la <strong>Universidad de A Coruña</strong>.
+          </p>
+          <p>
+            A través de mi metodología <strong>PSICOLISTICA</strong>, integro la psicología y el coaching 
+            para un bienestar completo: personal, físico y espiritual. Mi misión es acompañarte 
+            en tu proceso de transformación, ayudándote a descubrir y alcanzar tu máximo potencial.
+          </p>
+          <div class="intro__stats">
+            <div class="intro__stat">
+              <span class="intro__stat-icon">🎯</span>
+              <span class="intro__stat-label">Coaching<br>Personal</span>
+            </div>
+            <div class="intro__stat">
+              <span class="intro__stat-icon">💼</span>
+              <span class="intro__stat-label">Coaching<br>Ejecutivo</span>
+            </div>
+            <div class="intro__stat">
+              <span class="intro__stat-icon">🌀</span>
+              <span class="intro__stat-label">Enfoque<br>Holístico</span>
+            </div>
+          </div>
+          <a href="/sobre-mi" class="btn btn--secondary">
+            Conoce mi historia →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services section section--alt" id="servicios">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="overline">Servicios</span>
+        <h2>¿Cómo puedo ayudarte?</h2>
+        <div class="divider"></div>
+        <p>
+          Cada proceso es único. Elijo la metodología que mejor se adapta a ti 
+          y a tus objetivos.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- Card 1: Coaching Personal -->
+        <div class="services__card glass-card fade-in delay-1" id="service-personal">
+          <div class="services__card-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="services__card-title">Coaching Personal</h3>
+          <p class="services__card-text">
+            Acompañamiento individual y procesos de coaching terapéutico para tu 
+            desarrollo personal y bienestar emocional.
+          </p>
+          <a href="/servicios#personal" class="services__card-link">
+            Saber más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Coaching Ejecutivo -->
+        <div class="services__card glass-card fade-in delay-2" id="service-ejecutivo">
+          <div class="services__card-icon services__card-icon--golden">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="services__card-title">Coaching Ejecutivo</h3>
+          <p class="services__card-text">
+            Especializado en dinámicas empresariales y de equipo para ayudar 
+            a organizaciones a alcanzar su máximo potencial.
+          </p>
+          <a href="/servicios#ejecutivo" class="services__card-link">
+            Saber más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Formación y Talleres -->
+        <div class="services__card glass-card fade-in delay-3" id="service-formacion">
+          <div class="services__card-icon services__card-icon--lavender">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3 class="services__card-title">Formación y Talleres</h3>
+          <p class="services__card-text">
+            Conferencias, ponencias y formaciones especializadas para instituciones 
+            públicas y privadas.
+          </p>
+          <a href="/servicios#formacion" class="services__card-link">
+            Saber más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PSICOLISTICA METHOD ===== -->
+  <section class="method section" id="metodologia">
+    <div class="container">
+      <div class="method__grid">
+        <div class="method__text fade-in-left">
+          <span class="section-header__overline">Metodología</span>
+          <h2>PSICOL<span class="text-golden">Í</span>STICA</h2>
+          <div class="divider" style="margin-left: 0;"></div>
+          <p class="method__lead">
+            Un enfoque holístico que integra <strong>psicología</strong>, <strong>coaching</strong> 
+            y <strong>bienestar espiritual</strong> para una transformación completa.
+          </p>
+          <div class="method__pillars">
+            <div class="method__pillar">
+              <div class="method__pillar-dot"></div>
+              <div>
+                <h4>Mente</h4>
+                <p>Psicología aplicada para comprender patrones, creencias y emociones.</p>
+              </div>
+            </div>
+            <div class="method__pillar">
+              <div class="method__pillar-dot method__pillar-dot--golden"></div>
+              <div>
+                <h4>Cuerpo</h4>
+                <p>Bienestar físico como pilar fundamental del equilibrio integral.</p>
+              </div>
+            </div>
+            <div class="method__pillar">
+              <div class="method__pillar-dot method__pillar-dot--lavender"></div>
+              <div>
+                <h4>Espíritu</h4>
+                <p>Conexión con tu esencia para un crecimiento profundo y significativo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="method__visual fade-in-right">
+          <div class="method__circles">
+            <div class="method__circle method__circle--outer">
+              <div class="method__circle method__circle--middle">
+                <div class="method__circle method__circle--inner">
+                  <span>Tú</span>
+                </div>
+              </div>
+            </div>
+            <span class="method__circle-label method__circle-label--1">Mente</span>
+            <span class="method__circle-label method__circle-label--2">Cuerpo</span>
+            <span class="method__circle-label method__circle-label--3">Espíritu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials section section--alt" id="testimonios">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="overline">Testimonios</span>
+        <h2>Lo que dicen mis clientes</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonials__card glass-card fade-in delay-1" id="testimonial-1">
+          <div class="testimonials__stars">★★★★★</div>
+          <blockquote class="testimonials__quote">
+            "El proceso con Nagore me ayudó a encontrar claridad en un momento de mucha incertidumbre. 
+            Su enfoque holístico fue exactamente lo que necesitaba."
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__avatar">M</div>
+            <div>
+              <span class="testimonials__name">María G.</span>
+              <span class="testimonials__role">Coaching Personal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__card glass-card fade-in delay-2" id="testimonial-2">
+          <div class="testimonials__stars">★★★★★</div>
+          <blockquote class="testimonials__quote">
+            "Transformó completamente la dinámica de nuestro equipo. 
+            Su profesionalismo y cercanía hacen que cada sesión sea muy valiosa."
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__avatar testimonials__avatar--golden">C</div>
+            <div>
+              <span class="testimonials__name">Carlos R.</span>
+              <span class="testimonials__role">Coaching Ejecutivo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonials__card glass-card fade-in delay-3" id="testimonial-3">
+          <div class="testimonials__stars">★★★★★</div>
+          <blockquote class="testimonials__quote">
+            "La metodología PSICOLISTICA me abrió una perspectiva completamente nueva. 
+            He aprendido a conectar con mi bienestar de forma integral."
+          </blockquote>
+          <div class="testimonials__author">
+            <div class="testimonials__avatar testimonials__avatar--lavender">L</div>
+            <div>
+              <span class="testimonials__name">Lucía P.</span>
+              <span class="testimonials__role">PSICOLISTICA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final" id="cta-final">
+    <div class="cta-final__bg">
+      <div class="cta-final__gradient"></div>
+    </div>
+    <div class="container cta-final__content">
+      <span class="cta-final__overline fade-in">🌿 Tu transformación empieza aquí</span>
+      <h2 class="cta-final__title fade-in delay-1">
+        ¿Lista/o para dar<br>el primer paso?
+      </h2>
+      <p class="cta-final__text fade-in delay-2">
+        Reserva una sesión de descubrimiento gratuita y hablemos sobre 
+        cómo puedo acompañarte en tu camino.
+      </p>
+      <div class="cta-final__buttons fade-in delay-3">
+        <a href="/contacto" class="btn btn--white btn--lg">
+          Reserva tu sesión gratuita
+        </a>
+        <a href="tel:+34666146052" class="btn btn--outline-white">
+          📞 +34 666 14 60 52
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--header-height);
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__gradient {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    opacity: 0.03;
+  }
+
+  .hero__particles {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero__particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-sage-light);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hero__particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+  .hero__particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 1s; }
+  .hero__particle:nth-child(3) { top: 40%; left: 60%; animation-delay: 2s; animation-duration: 8s; }
+  .hero__particle:nth-child(4) { top: 80%; left: 30%; animation-delay: 3s; }
+  .hero__particle:nth-child(5) { top: 15%; left: 70%; animation-delay: 4s; animation-duration: 7s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .hero__overline {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-golden);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__title {
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-xl);
+    color: var(--color-forest);
+  }
+
+  .hero__title-accent {
+    background: var(--gradient-sage);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-charcoal);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+    max-width: 520px;
+  }
+
+  .hero__ctas {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .btn--lg {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--text-sm);
+  }
+
+  .hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero__image-frame {
+    position: relative;
+    width: 400px;
+    height: 480px;
+  }
+
+  .hero__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-warm);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(124, 154, 130, 0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124, 154, 130, 0.05) 0%, rgba(196, 149, 106, 0.05) 100%);
+  }
+
+  .hero__image-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--color-sage);
+  }
+
+  .hero__image-icon span {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-forest);
+  }
+
+  .hero__image-decoration {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--color-sage-light);
+    border-radius: var(--radius-2xl);
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  .hero__scroll-indicator {
+    position: absolute;
+    bottom: var(--space-2xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-sage);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 30px;
+    background: linear-gradient(to bottom, var(--color-sage), transparent);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ===== INTRO ===== */
+  .intro__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+
+  .intro__image-wrapper {
+    position: relative;
+  }
+
+  .intro__image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--gradient-warm);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    border: 2px solid rgba(124, 154, 130, 0.1);
+  }
+
+  .intro__experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .intro__experience-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-golden);
+  }
+
+  .intro__experience-text {
+    font-size: var(--text-xs);
+    color: var(--color-charcoal);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .section-header__overline {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-golden);
+    margin-bottom: var(--space-md);
+  }
+
+  .intro__lead {
+    font-size: var(--text-lg);
+    color: var(--color-forest);
+    line-height: 1.7;
+  }
+
+  .intro__stats {
+    display: flex;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .intro__stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .intro__stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .intro__stat-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-forest);
+    line-height: 1.3;
+  }
+
+  /* ===== SERVICES ===== */
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .services__card {
+    padding: var(--space-2xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-sage);
+    transform: scaleX(0);
+    transition: transform var(--transition-base);
+  }
+
+  .services__card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .services__card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-xl);
+    background: rgba(124, 154, 130, 0.1);
+    color: var(--color-sage);
+    transition: all var(--transition-base);
+  }
+
+  .services__card:hover .services__card-icon {
+    background: var(--color-sage);
+    color: var(--color-white);
+    transform: scale(1.05);
+  }
+
+  .services__card-icon--golden {
+    background: rgba(196, 149, 106, 0.1);
+    color: var(--color-golden);
+  }
+
+  .services__card:hover .services__card-icon--golden {
+    background: var(--color-golden);
+    color: var(--color-white);
+  }
+
+  .services__card-icon--lavender {
+    background: rgba(184, 169, 201, 0.1);
+    color: var(--color-lavender);
+  }
+
+  .services__card:hover .services__card-icon--lavender {
+    background: var(--color-lavender);
+    color: var(--color-white);
+  }
+
+  .services__card-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .services__card-text {
+    font-size: var(--text-sm);
+    color: var(--color-charcoal);
+    opacity: 0.8;
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+  }
+
+  .services__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-sage-dark);
+    transition: all var(--transition-fast);
+  }
+
+  .services__card-link:hover {
+    gap: var(--space-sm);
+    color: var(--color-golden);
+  }
+
+  /* ===== METHOD ===== */
+  .method__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+
+  .method__lead {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .method__pillars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .method__pillar {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .method__pillar-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-sage);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .method__pillar-dot--golden { background: var(--color-golden); }
+  .method__pillar-dot--lavender { background: var(--color-lavender); }
+
+  .method__pillar h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-xs);
+  }
+
+  .method__pillar p {
+    font-size: var(--text-sm);
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  /* Circles Visualization */
+  .method__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .method__circles {
+    position: relative;
+    width: 350px;
+    height: 350px;
+  }
+
+  .method__circle {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .method__circle--outer {
+    width: 350px;
+    height: 350px;
+    background: rgba(124, 154, 130, 0.08);
+    border: 2px solid rgba(124, 154, 130, 0.15);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .method__circle--middle {
+    width: 230px;
+    height: 230px;
+    background: rgba(196, 149, 106, 0.08);
+    border: 2px solid rgba(196, 149, 106, 0.15);
+    animation: pulse 4s ease-in-out infinite 1s;
+  }
+
+  .method__circle--inner {
+    width: 120px;
+    height: 120px;
+    background: var(--gradient-sage);
+    border: none;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    box-shadow: var(--shadow-glow);
+    animation: pulse 4s ease-in-out infinite 2s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+  }
+
+  .method__circle-label {
+    position: absolute;
+    font-family: var(--font-subheading);
+    font-size: var(--text-base);
+    font-style: italic;
+    color: var(--color-sage-dark);
+    font-weight: 500;
+  }
+
+  .method__circle-label--1 { top: -25px; left: 50%; transform: translateX(-50%); }
+  .method__circle-label--2 { bottom: -25px; right: 20px; }
+  .method__circle-label--3 { bottom: -25px; left: 20px; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .testimonials__card {
+    padding: var(--space-2xl);
+  }
+
+  .testimonials__stars {
+    color: var(--color-golden);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.1em;
+  }
+
+  .testimonials__quote {
+    font-family: var(--font-subheading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--color-forest);
+    margin-bottom: var(--space-xl);
+  }
+
+  .testimonials__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .testimonials__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-sage);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--text-lg);
+  }
+
+  .testimonials__avatar--golden { background: var(--color-golden); }
+  .testimonials__avatar--lavender { background: var(--color-lavender); }
+
+  .testimonials__name {
+    display: block;
+    font-weight: 600;
+    color: var(--color-forest);
+    font-size: var(--text-sm);
+  }
+
+  .testimonials__role {
+    font-size: var(--text-xs);
+    color: var(--color-sage);
+  }
+
+  /* ===== CTA FINAL ===== */
+  .cta-final {
+    position: relative;
+    padding: var(--space-5xl) 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .cta-final__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .cta-final__gradient {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+  }
+
+  .cta-final__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-final__overline {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-sage-light);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-final__title {
+    font-size: var(--text-4xl);
+    color: var(--color-ivory);
+    margin-bottom: var(--space-xl);
+  }
+
+  .cta-final__text {
+    font-size: var(--text-lg);
+    color: rgba(250, 250, 247, 0.8);
+    max-width: 550px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .cta-final__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn--outline-white {
+    background: transparent;
+    color: var(--color-ivory);
+    border: 2px solid rgba(250, 250, 247, 0.4);
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    transition: all var(--transition-base);
+  }
+
+  .btn--outline-white:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-ivory);
+    transform: translateY(-2px);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero__content {
+      gap: var(--space-2xl);
+    }
+
+    .hero__image-frame {
+      width: 320px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero__content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding-top: var(--space-2xl);
+    }
+
+    .hero__subtitle {
+      margin: 0 auto var(--space-2xl);
+    }
+
+    .hero__ctas {
+      justify-content: center;
+    }
+
+    .hero__visual {
+      display: none;
+    }
+
+    .hero__scroll-indicator {
+      display: none;
+    }
+
+    .intro__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .intro__image-col {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .intro__text-col {
+      text-align: center;
+    }
+
+    .intro__stats {
+      justify-content: center;
+    }
+
+    .services__grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .method__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .method__text {
+      text-align: center;
+    }
+
+    .method__circles {
+      width: 280px;
+      height: 280px;
+    }
+
+    .method__circle--outer {
+      width: 280px;
+      height: 280px;
+    }
+
+    .method__circle--middle {
+      width: 180px;
+      height: 180px;
+    }
+
+    .method__circle--inner {
+      width: 90px;
+      height: 90px;
+    }
+
+    .testimonials__grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+</style>

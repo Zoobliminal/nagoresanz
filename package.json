@@ -1,0 +1,15 @@
+{
+  "name": "nagoresanz-coach",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Web profesional de coaching, psicología y estilo de vida — Nagore Sanz | PSICOLISTICA",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.5.0"
+  }
+}
