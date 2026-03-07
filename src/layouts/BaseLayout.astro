@@ -46,6 +46,10 @@ const fullTitle =
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
 
+    <!-- SEO Basics -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+    <meta name="robots" content="index, follow" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -59,7 +63,7 @@ const fullTitle =
         description: description,
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Av. de Santo Estevo de Morás",
+          streetAddress: "Av. de Santo Estevo de Morás, s/n",
           addressLocality: "Arteixo",
           addressRegion: "A Coruña",
           postalCode: "15142",
