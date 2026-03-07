@@ -1,0 +1,2 @@
+﻿Need to install the following packages:
+netlify-cli@24.0.1
