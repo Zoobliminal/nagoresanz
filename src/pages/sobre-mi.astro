@@ -23,15 +23,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="about__grid">
         <div class="about__image-col fade-in-left">
           <div class="about__image">
-            <div class="about__image-placeholder">
-              <span>🌿</span>
-              <p>Nagore Sanz</p>
-            </div>
+            <img
+              src="/images/ngsnz01.jpeg"
+              alt="Nagore Sanz - Coach Personal y Ejecutiva"
+              class="about__img"
+            />
           </div>
         </div>
 
         <div class="about__text-col fade-in-right">
-          <h2>Mi <span class="text-sage">historia</span></h2>
+          <h2>Mi <span class="text-secondary">historia</span></h2>
           <div class="divider" style="margin-left:0"></div>
 
           <p>
@@ -240,7 +241,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-golden);
+    color: var(--color-accent);
     margin-bottom: var(--space-md);
   }
 
@@ -253,7 +254,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     font-family: var(--font-subheading);
     font-size: var(--text-xl);
     font-style: italic;
-    color: var(--color-sage);
+    color: var(--color-primary);
     max-width: 500px;
     margin: 0 auto;
   }
@@ -266,25 +267,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     align-items: center;
   }
 
-  .about__image-placeholder {
+  .about__img {
     width: 100%;
     aspect-ratio: 3/4;
-    background: var(--gradient-warm);
+    object-fit: cover;
     border-radius: var(--radius-2xl);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
-    border: 2px solid rgba(124, 154, 130, 0.1);
-    font-size: 4rem;
-  }
-
-  .about__image-placeholder p {
-    font-family: var(--font-heading);
-    font-size: var(--text-lg);
-    color: var(--color-forest);
-    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid rgba(156, 200, 222, 0.2); /* using light blue */
   }
 
   /* Values */
@@ -345,7 +334,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     width: 70px;
     height: 70px;
     border-radius: var(--radius-lg);
-    background: var(--color-sage);
+    background: var(--color-secondary);
     color: var(--color-white);
     display: flex;
     align-items: center;
@@ -357,10 +346,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .credentials__badge--golden {
-    background: var(--color-golden);
+    background: var(--color-accent);
   }
   .credentials__badge--lavender {
-    background: var(--color-lavender);
+    background: var(--color-secondary-light);
   }
 
   .credentials__info h4 {
@@ -377,7 +366,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   /* Page CTA */
   .page-cta {
     padding: var(--space-4xl) 0;
-    background: var(--color-sand);
+    background: var(--color-bg-alt);
   }
 
   .page-cta h2 {

@@ -4,38 +4,63 @@
    ============================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+/* --- Custom Fonts --- */
+@font-face {
+  font-family: 'Gubia';
+  src: url('/fonts/Gubia%20Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gubia';
+  src: url('/fonts/Gubia%20Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gubia';
+  src: url('/fonts/Gubia%20Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* --- CSS Custom Properties --- */
 :root {
   /* Colors */
-  --color-sage: #7C9A82;
-  --color-sage-light: #A3BFA8;
-  --color-sage-dark: #5A7A60;
-  --color-sand: #F5EDE3;
-  --color-sand-light: #FAF6F1;
-  --color-forest: #2D3B2D;
-  --color-golden: #C4956A;
-  --color-golden-light: #D4AD88;
-  --color-golden-dark: #A87B52;
-  --color-lavender: #B8A9C9;
-  --color-lavender-light: #D4CAE0;
+  --color-primary: #002d5c;
+  --color-primary-light: #33577d;
+  --color-primary-dark: #001a36;
+  --color-secondary: #9cc8de;
+  --color-secondary-light: #cce4f0;
+  --color-secondary-dark: #6ba8c4;
+  --color-accent: #8eabc0;
+  --color-accent-light: #b4c9d6;
+  --color-accent-dark: #6b899e;
+  --color-bg-alt: #f0f6fa;
   --color-ivory: #FAFAF7;
-  --color-charcoal: #3A3A3A;
+  --color-charcoal: #1f2937;
   --color-white: #FFFFFF;
-  --color-black: #1A1A1A;
+  --color-black: #0f172a;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #2D3B2D 0%, #3D5040 40%, #5A7A60 100%);
-  --gradient-sage: linear-gradient(135deg, #7C9A82 0%, #A3BFA8 100%);
-  --gradient-golden: linear-gradient(135deg, #C4956A 0%, #D4AD88 100%);
-  --gradient-warm: linear-gradient(180deg, #F5EDE3 0%, #FAFAF7 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  --gradient-hero: linear-gradient(135deg, #002d5c 0%, #1a426e 40%, #33577d 100%);
+  --gradient-sage: linear-gradient(135deg, #002d5c 0%, #33577d 100%);
+  --gradient-golden: linear-gradient(135deg, #9cc8de 0%, #cce4f0 100%);
+  --gradient-warm: linear-gradient(180deg, #f0f6fa 0%, #ffffff 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
 
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-logo: 'Gubia', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
   --font-subheading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Outfit', sans-serif;
 
   /* Font Sizes */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -72,7 +97,7 @@
   --shadow-md: 0 4px 12px rgba(45, 59, 45, 0.08);
   --shadow-lg: 0 8px 30px rgba(45, 59, 45, 0.12);
   --shadow-xl: 0 16px 50px rgba(45, 59, 45, 0.15);
-  --shadow-glow: 0 0 30px rgba(124, 154, 130, 0.2);
+  --shadow-glow: 0 0 30px rgba(156, 200, 222, 0.3);
 
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,6 +133,19 @@ body {
   color: var(--color-charcoal);
   background-color: var(--color-ivory);
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/Fondo_ngsnz.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: -10;
 }
 
 img {
@@ -129,24 +167,47 @@ button {
   font-family: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
-  color: var(--color-forest);
+  color: var(--color-primary);
   line-height: 1.2;
   font-weight: 600;
 }
 
-h1 { font-size: var(--text-5xl); }
-h2 { font-size: var(--text-4xl); }
-h3 { font-size: var(--text-3xl); }
-h4 { font-size: var(--text-2xl); }
-h5 { font-size: var(--text-xl); }
-h6 { font-size: var(--text-lg); }
+h1 {
+  font-size: var(--text-5xl);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
 
 p {
   margin-bottom: var(--space-md);
@@ -158,7 +219,7 @@ p {
   font-size: var(--text-xl);
   font-weight: 400;
   font-style: italic;
-  color: var(--color-sage);
+  color: var(--color-primary-light);
 }
 
 /* --- Utility Classes --- */
@@ -181,10 +242,21 @@ p {
   background: var(--gradient-warm);
 }
 
-.text-center { text-align: center; }
-.text-sage { color: var(--color-sage); }
-.text-golden { color: var(--color-golden); }
-.text-forest { color: var(--color-forest); }
+.text-center {
+  text-align: center;
+}
+
+.text-secondary {
+  color: var(--color-primary-light);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
 
 /* --- Buttons --- */
 .btn {
@@ -217,7 +289,7 @@ p {
 }
 
 .btn--primary {
-  background: var(--gradient-golden);
+  background: var(--gradient-hero);
   color: var(--color-white);
   box-shadow: var(--shadow-md);
 }
@@ -228,24 +300,24 @@ p {
 }
 
 .btn--primary::after {
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .btn--secondary {
   background: transparent;
-  color: var(--color-sage-dark);
-  border: 2px solid var(--color-sage);
+  color: var(--color-primary-light);
+  border: 2px solid var(--color-secondary);
 }
 
 .btn--secondary:hover {
-  background: var(--color-sage);
+  background: var(--color-secondary);
   color: var(--color-white);
   transform: translateY(-2px);
 }
 
 .btn--white {
   background: var(--color-white);
-  color: var(--color-forest);
+  color: var(--color-primary);
   box-shadow: var(--shadow-md);
 }
 
@@ -300,11 +372,25 @@ p {
 }
 
 /* Stagger delays */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-5 {
+  transition-delay: 0.5s;
+}
 
 /* --- Glassmorphism Cards --- */
 .glass-card {
@@ -335,7 +421,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-golden);
+  color: var(--color-accent);
   margin-bottom: var(--space-md);
 }
 
@@ -388,8 +474,8 @@ p {
 
 /* --- Selection  --- */
 ::selection {
-  background: var(--color-sage-light);
-  color: var(--color-forest);
+  background: var(--color-secondary-light);
+  color: var(--color-primary);
 }
 
 /* --- Scrollbar --- */
@@ -402,10 +488,10 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-sage-light);
+  background: var(--color-secondary-light);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-sage);
+  background: var(--color-secondary);
 }

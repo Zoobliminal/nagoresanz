@@ -22,10 +22,26 @@ const currentYear = new Date().getFullYear();
         <!-- Brand -->
         <div class="footer__brand">
           <a href="/" class="footer__logo">
-            <span class="footer__logo-icon">🌿</span>
-            <div>
-              <span class="footer__logo-name">Nagore Sanz</span>
-              <span class="footer__logo-tagline">Coach & PSICOLISTICA</span>
+            <span class="footer__logo-icon">
+              <img
+                src="/images/logo_square_bgtransp.png"
+                alt="Nagore Sanz Logo"
+                width="200"
+                height="200"
+                style="object-fit: contain;"
+              />
+            </span>
+            <div style="display: flex; flex-direction: column;">
+              <!-- <span
+                class="footer__logo-name"
+                style="text-transform: lowercase; letter-spacing: 0.02em; font-family: var(--font-logo);"
+                ><strong style="font-weight: 700;">nagore</strong>sanz</span
+              >
+              <span
+                class="footer__logo-tagline"
+                style="font-family: var(--font-logo); font-style: normal; letter-spacing: 0.25em; font-weight: 300; align-self: flex-end; margin-right: -0.25em;"
+                >COACH</span
+              > -->
             </div>
           </a>
           <p class="footer__description">
@@ -187,7 +203,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer__wave {
-    color: var(--color-forest);
+    color: var(--color-primary);
     line-height: 0;
     margin-bottom: -1px;
   }
@@ -198,7 +214,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer__content {
-    background: var(--color-forest);
+    background: var(--color-primary);
     padding: var(--space-4xl) 0 var(--space-2xl);
   }
 
@@ -230,7 +246,7 @@ const currentYear = new Date().getFullYear();
   .footer__logo-tagline {
     font-family: var(--font-subheading);
     font-size: var(--text-xs);
-    color: var(--color-sage-light);
+    color: var(--color-secondary-light);
     font-style: italic;
   }
 
@@ -259,7 +275,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer__social-link:hover {
-    background: var(--color-golden);
+    background: var(--color-accent);
     transform: translateY(-3px);
   }
 
@@ -280,7 +296,7 @@ const currentYear = new Date().getFullYear();
     left: 0;
     width: 30px;
     height: 2px;
-    background: var(--color-golden);
+    background: var(--color-accent);
     border-radius: var(--radius-full);
   }
 
@@ -295,7 +311,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer__links a:hover {
-    color: var(--color-golden-light);
+    color: var(--color-accent-light);
     padding-left: var(--space-sm);
   }
 
@@ -311,7 +327,7 @@ const currentYear = new Date().getFullYear();
   .footer__contact svg {
     flex-shrink: 0;
     margin-top: 3px;
-    color: var(--color-sage-light);
+    color: var(--color-secondary-light);
   }
 
   .footer__contact a {
@@ -320,7 +336,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer__contact a:hover {
-    color: var(--color-golden-light);
+    color: var(--color-accent-light);
   }
 
   .footer__bottom {
