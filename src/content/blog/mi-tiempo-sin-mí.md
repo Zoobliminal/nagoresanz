@@ -4,7 +4,7 @@ description: Recordar es un lujo, olvidar un privilegio
 pubDate: 2026-03-07T01:49:00.000+01:00
 category: Desarrollo Personal
 readTime: 5 min
-heroImage: /images/blog/gemini_generated_image_myg3kimyg3kimyg3.png
+heroImage: public/images/blog/marbit-by-zoo.png
 ---
 ### No siempre estuvimos presentes.
 
