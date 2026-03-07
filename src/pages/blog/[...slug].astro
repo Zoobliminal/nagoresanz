@@ -1,0 +1,247 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+    return date.toLocaleDateString("es-ES", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
+}
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+    <article class="post">
+        <header class="post-header">
+            <div class="container container--narrow">
+                <div class="post-meta fade-in">
+                    <span class="post-category">{post.data.category}</span>
+                    <time datetime={post.data.pubDate.toISOString()}>
+                        {formatDate(post.data.pubDate)}
+                    </time>
+                    <span class="post-reading"
+                        >{post.data.readTime || "5 min"} lectura</span
+                    >
+                </div>
+                <h1 class="post-title fade-in delay-1">{post.data.title}</h1>
+                <p class="post-description fade-in delay-2">
+                    {post.data.description}
+                </p>
+            </div>
+        </header>
+
+        <div class="post-content fade-in delay-3">
+            <div class="container container--narrow">
+                {
+                    post.data.heroImage && (
+                        <div class="post-hero">
+                            <div class="post-hero__placeholder" />
+                        </div>
+                    )
+                }
+                <div class="prose">
+                    <Content />
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-share">
+                        <p>¿Te ha gustado este artículo? Compártelo:</p>
+                        <div class="post-share__links">
+                            <!-- Botones de compartir simples -->
+                            <a
+                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${Astro.url}`}
+                                target="_blank"
+                                rel="noopener">LinkedIn</a
+                            >
+                            <a
+                                href={`https://www.facebook.com/sharer/sharer.php?u=${Astro.url}`}
+                                target="_blank"
+                                rel="noopener">Facebook</a
+                            >
+                        </div>
+                    </div>
+                    <div class="post-cta glass-card">
+                        <h3>¿Quieres profundizar en este tema?</h3>
+                        <p>
+                            Reserva una sesión de descubrimiento gratuita y
+                            hablemos sobre cómo el coaching puede ayudarte.
+                        </p>
+                        <a href="/contacto" class="btn btn--primary"
+                            >Reservar Sesión</a
+                        >
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </article>
+</BaseLayout>
+
+<style>
+    .post-header {
+        padding: calc(var(--header-height) + var(--space-4xl)) 0
+            var(--space-3xl);
+        background: var(--gradient-warm);
+        text-align: center;
+    }
+
+    .container--narrow {
+        max-width: 800px;
+    }
+
+    .post-meta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+        margin-bottom: var(--space-lg);
+        font-size: var(--text-sm);
+        color: var(--color-sage);
+    }
+
+    .post-category {
+        background: var(--color-white);
+        padding: var(--space-xs) var(--space-md);
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: var(--text-xs);
+        color: var(--color-sage-dark);
+    }
+
+    .post-title {
+        font-size: var(--text-4xl);
+        margin-bottom: var(--space-lg);
+    }
+
+    .post-description {
+        font-family: var(--font-subheading);
+        font-size: var(--text-xl);
+        font-style: italic;
+        color: var(--color-forest);
+        opacity: 0.8;
+    }
+
+    .post-hero {
+        margin-bottom: var(--space-3xl);
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+        height: 400px;
+        background: var(--gradient-warm);
+    }
+
+    .post-hero__placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            45deg,
+            var(--color-sand-light),
+            var(--color-sage-light)
+        );
+        opacity: 0.5;
+    }
+
+    .post-content {
+        padding: var(--space-4xl) 0;
+    }
+
+    /* Estilos para el contenido Markdown (Prose) */
+    .prose {
+        font-size: var(--text-lg);
+        line-height: 1.8;
+        color: var(--color-charcoal);
+    }
+
+    .prose :global(h2) {
+        font-size: var(--text-2xl);
+        margin: var(--space-3xl) 0 var(--space-lg);
+        color: var(--color-forest);
+    }
+
+    .prose :global(h3) {
+        font-size: var(--text-xl);
+        margin: var(--space-2xl) 0 var(--space-md);
+    }
+
+    .prose :global(p) {
+        margin-bottom: var(--space-lg);
+    }
+
+    .prose :global(blockquote) {
+        border-left: 4px solid var(--color-golden);
+        padding: var(--space-md) var(--space-2xl);
+        margin: var(--space-2xl) 0;
+        font-style: italic;
+        background: var(--color-sand-light);
+        border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+
+    .prose :global(ul),
+    .prose :global(ol) {
+        margin-bottom: var(--space-xl);
+        padding-left: var(--space-2xl);
+    }
+
+    .prose :global(li) {
+        margin-bottom: var(--space-sm);
+    }
+
+    .post-footer {
+        margin-top: var(--space-4xl);
+        padding-top: var(--space-3xl);
+        border-top: 1px solid var(--color-sand);
+    }
+
+    .post-share {
+        margin-bottom: var(--space-3xl);
+        text-align: center;
+    }
+
+    .post-share__links {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-xl);
+        margin-top: var(--space-md);
+    }
+
+    .post-share__links a {
+        font-weight: 600;
+        color: var(--color-sage-dark);
+    }
+
+    .post-share__links a:hover {
+        color: var(--color-golden);
+    }
+
+    .post-cta {
+        padding: var(--space-3xl);
+        text-align: center;
+    }
+
+    .post-cta h3 {
+        margin-bottom: var(--space-md);
+    }
+    .post-cta p {
+        margin-bottom: var(--space-xl);
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        .post-title {
+            font-size: var(--text-3xl);
+        }
+        .post-hero {
+            height: 250px;
+        }
+    }
+</style>
