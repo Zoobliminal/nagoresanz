@@ -194,20 +194,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <input type="hidden" name="redirigir" value="https://www.nagoresanz.com/gracias.html" />
             <input type="hidden" name="recipe" value="zoobliminal@gmail.com" />
             <input type="hidden" name="asunto" value="Envío formulario desde nagoresanz.com" />
-            <!-- Solo Email, Condiciones y el campo formateado son requeridos por DinaServer para evitar duplicados -->
-            <input type="hidden" name="required" value="Email;Acepto_Condiciones;Mensaje_Formateado" />
+            <input type="hidden" name="required" value="nombre;email;textoLegal" />
             <input type="hidden" name="dominio" value="nagoresanz.com" />
             <input type="hidden" name="idioma" value="es" />
-
-            <!-- Este campo recopilará todo el mensaje formateado -->
-            <input type="hidden" id="Mensaje_Formateado" name="Mensaje_Formateado" />
 
             <div class="contact__form-group">
               <label for="nombre">Nombre completo *</label>
               <input
                 type="text"
                 id="nombre"
-                name="Nombre_Simple"
+                name="nombre"
                 required
                 placeholder="Tu nombre"
               />
@@ -218,7 +214,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <input
                 type="email"
                 id="email"
-                name="Email"
+                name="email"
                 required
                 placeholder="tu@email.com"
               />
@@ -229,7 +225,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <input
                 type="tel"
                 id="telefono"
-                name="Telefono_Simple"
+                name="telefono"
                 placeholder="+34 600 000 000"
               />
             </div>
@@ -238,7 +234,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <label for="queteinteresa">¿Qué servicio te interesa?</label>
               <textarea
                 id="queteinteresa"
-                name="Interes_Simple"
+                name="queteinteresa"
                 rows="3"
                 placeholder="Dime qué servicio buscas..."></textarea>
             </div>
@@ -247,14 +243,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <label for="ayuda">¿Cómo puedo ayudarte? *</label>
               <textarea
                 id="ayuda"
-                name="Mensaje_Simple"
+                name="ayuda"
                 required
                 rows="4"
                 placeholder="Cuéntame brevemente tu situación..."></textarea>
             </div>
 
             <div class="contact__form-group contact__form-group--checkbox">
-              <input type="checkbox" id="legal" name="Acepto_Condiciones" required />
+              <input type="checkbox" id="legal" name="textoLegal" required />
               <label for="legal">
                 Acepto las <a href="/legal" target="_blank">condiciones legales</a> y la política de privacidad. *
               </label>
@@ -715,38 +711,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         alert("Por favor, resuelve correctamente la suma de verificación.");
         return;
       }
-
-      // 2. Construir el mensaje formateado (Opción C)
-      const nombreVal = (document.getElementById("nombre") as HTMLInputElement).value;
-      const emailVal = (document.getElementById("email") as HTMLInputElement).value;
-      const tlfVal = (document.getElementById("telefono") as HTMLInputElement).value || "No facilitado";
-      const interesVal = (document.getElementById("queteinteresa") as HTMLTextAreaElement).value || "No especificado";
-      const ayudaVal = (document.getElementById("ayuda") as HTMLTextAreaElement).value;
-      const msgFormateado = document.getElementById("Mensaje_Formateado") as HTMLInputElement;
-
-      if (msgFormateado) {
-        msgFormateado.value = `
-        
-MENSAJE DE: ${nombreVal.toUpperCase()}
------------------------------------------------------------
-CONTACTO: ${emailVal} | TEL: ${tlfVal}
-
-¿QUÉ LE INTERESA?:
-${interesVal}
-
-MENSAJE / CÓMO PUEDO AYUDARTE:
-"${ayudaVal}"
------------------------------------------------------------
-Aceptó las condiciones legales.
-        `;
-      }
-
-      // 3. Desactivar nombres de campos individuales para evitar duplicados en el PDF/Email de DinaServer
-      // Pero dejamos Email y Acepto_Condiciones para que el servidor los procese normalmente
-      (document.getElementById("nombre") as HTMLInputElement).removeAttribute("name");
-      (document.getElementById("telefono") as HTMLInputElement).removeAttribute("name");
-      (document.getElementById("queteinteresa") as HTMLTextAreaElement).removeAttribute("name");
-      (document.getElementById("ayuda") as HTMLTextAreaElement).removeAttribute("name");
       
       // Mostrar estado de carga brevemente
       btn.classList.add("btn--disabled");
@@ -773,6 +737,7 @@ Aceptó las condiciones legales.
       form.reset();
       form.style.display = "block";
       successMsg.style.display = "none";
+      successMsg.classList.remove("visible");
       btn.classList.remove("btn--disabled");
       btnText.textContent = "Enviar mensaje";
       
