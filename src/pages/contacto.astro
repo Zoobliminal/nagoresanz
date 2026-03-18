@@ -156,7 +156,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="contact__form-wrapper fade-in-right">
-          <div class="contact__success-state glass-card" id="success-msg" style="display: none;">
+          <div
+            class="contact__success-state glass-card"
+            id="success-msg"
+            style="display: none;"
+          >
             <div class="contact__success-icon">
               <svg
                 width="48"
@@ -173,8 +177,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </svg>
             </div>
             <h3>¡Mensaje enviado!</h3>
-            <p>Muchas gracias por contactar conmigo. He recibido tu mensaje correctamente y te responderé en breve.</p>
-            <button class="btn btn--primary" id="reset-btn">Enviar otro mensaje</button>
+            <p>
+              Muchas gracias por contactar conmigo. He recibido tu mensaje
+              correctamente y te responderé en breve.
+            </p>
+            <button class="btn btn--primary" id="reset-btn"
+              >Enviar otro mensaje</button
+            >
           </div>
 
           <form
@@ -191,10 +200,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </p>
 
             <!-- Datos de configuración del hosting (DinaServer) -->
-            <input type="hidden" name="redirigir" value="https://www.nagoresanz.com/gracias.html" />
-            <input type="hidden" name="recipe" value="zoobliminal@gmail.com" />
-            <input type="hidden" name="asunto" value="Envío formulario desde nagoresanz.com" />
-            <input type="hidden" name="required" value="nombre;email;textoLegal" />
+            <input
+              type="hidden"
+              name="redirigir"
+              value="https://www.nagoresanz.com/gracias.html"
+            />
+            <input type="hidden" name="recipe" value="nasanzcoach@gmail.com" />
+            <input
+              type="hidden"
+              name="asunto"
+              value="Mensaje de contacto desde nagoresanz.com"
+            />
+            <input
+              type="hidden"
+              name="required"
+              value="nombre;email;textoLegal"
+            />
             <input type="hidden" name="dominio" value="nagoresanz.com" />
             <input type="hidden" name="idioma" value="es" />
 
@@ -252,15 +273,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="contact__form-group contact__form-group--checkbox">
               <input type="checkbox" id="legal" name="textoLegal" required />
               <label for="legal">
-                Acepto las <a href="/legal" target="_blank">condiciones legales</a> y la política de privacidad. *
+                Acepto las <a href="/legal" target="_blank"
+                  >condiciones legales</a
+                > y la política de privacidad. *
               </label>
             </div>
 
             <div class="contact__form-group contact__form-group--captcha">
-              <label for="entradaVerificacion">Verificación de seguridad *</label>
+              <label for="entradaVerificacion"
+                >Verificación de seguridad *</label
+              >
               <div class="contact__captcha-wrapper">
-                <span id="muestraVerificacion" class="contact__captcha-text"></span>
-                <input type="hidden" id="verificacionOculto" name="verificacionOculto"/>
+                <span id="muestraVerificacion" class="contact__captcha-text"
+                ></span>
+                <input
+                  type="hidden"
+                  id="verificacionOculto"
+                  name="verificacionOculto"
+                />
                 <input
                   type="text"
                   id="entradaVerificacion"
@@ -270,7 +300,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   style="width: 80px;"
                 />
               </div>
-              <p class="contact__form-help">Resuelve esta sencilla suma para enviar el mensaje.</p>
+              <p class="contact__form-help">
+                Resuelve esta sencilla suma para enviar el mensaje.
+              </p>
             </div>
 
             <button
@@ -295,14 +327,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </button>
           </form>
           <!-- Iframe invisible para evitar redirección -->
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+          ></iframe>
         </div>
       </div>
     </div>
   </section>
-
-
-
 
   <!-- Map Section -->
   <section class="map-section" id="map">
@@ -660,7 +690,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   let c = a + b;
 
   function GenerarCaptcha() {
-    const hidden = document.getElementById("verificacionOculto") as HTMLInputElement;
+    const hidden = document.getElementById(
+      "verificacionOculto",
+    ) as HTMLInputElement;
     const muestra = document.getElementById("muestraVerificacion");
     if (muestra && hidden) {
       muestra.innerHTML = a + " + " + b + " = ";
@@ -669,7 +701,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   function ValidarCaptcha() {
-    const inputField = document.getElementById("entradaVerificacion") as HTMLInputElement;
+    const inputField = document.getElementById(
+      "entradaVerificacion",
+    ) as HTMLInputElement;
     if (inputField.value == c.toString()) {
       return true;
     } else {
@@ -711,7 +745,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         alert("Por favor, resuelve correctamente la suma de verificación.");
         return;
       }
-      
+
       // Mostrar estado de carga brevemente
       btn.classList.add("btn--disabled");
       btnText.textContent = "Enviando...";
@@ -720,13 +754,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       iframe.onload = () => {
         form.style.display = "none";
         successMsg.style.display = "flex";
-        
+
         // Timeout para asegurar que el navegador procese el display:flex antes de la animación
         setTimeout(() => {
           successMsg.classList.add("fade-in", "visible");
         }, 10);
-        
-        window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+
+        window.scrollTo({ top: form.offsetTop - 100, behavior: "smooth" });
       };
     });
   }
@@ -740,7 +774,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       successMsg.classList.remove("visible");
       btn.classList.remove("btn--disabled");
       btnText.textContent = "Enviar mensaje";
-      
+
       // Regenerar Captcha
       a = Math.ceil(Math.random() * 10);
       b = Math.ceil(Math.random() * 10);
