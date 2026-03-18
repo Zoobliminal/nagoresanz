@@ -156,12 +156,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="contact__form-wrapper fade-in-right">
+          <div class="contact__success-state glass-card" id="success-msg" style="display: none;">
+            <div class="contact__success-icon">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3>¡Mensaje enviado!</h3>
+            <p>Muchas gracias por contactar conmigo. He recibido tu mensaje correctamente y te responderé en breve.</p>
+            <button class="btn btn--primary" id="reset-btn">Enviar otro mensaje</button>
+          </div>
+
           <form
             class="contact__form glass-card"
             id="contact-form"
             action="https://form-mailer.dinaserver.com/"
             method="POST"
             enctype="multipart/form-data"
+            target="hidden_iframe"
           >
             <h3>Envíame un mensaje</h3>
             <p class="contact__form-subtitle">
@@ -272,6 +294,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </svg>
             </button>
           </form>
+          <!-- Iframe invisible para evitar redirección -->
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         </div>
       </div>
     </div>
@@ -431,6 +455,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     margin-bottom: var(--space-xl);
   }
 
+  /* Success State */
+  .contact__success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-3xl) var(--space-2xl);
+    min-height: 400px;
+    animation: fadeIn var(--transition-base);
+  }
+
+  .contact__success-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(124, 154, 130, 0.1);
+    color: var(--color-secondary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact__success-state h3 {
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__success-state p {
+    font-size: var(--text-base);
+    color: var(--color-charcoal);
+    max-width: 400px;
+    margin-bottom: var(--space-2xl);
+    line-height: 1.6;
+  }
+
   .contact__form-group {
     margin-bottom: var(--space-lg);
   }
@@ -588,11 +650,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   const btn = document.getElementById("submit-btn") as HTMLButtonElement;
   const btnText = document.getElementById("btn-text") as HTMLSpanElement;
   const legalCheck = document.getElementById("legal") as HTMLInputElement;
+  const successMsg = document.getElementById("success-msg") as HTMLDivElement;
+  const resetBtn = document.getElementById("reset-btn") as HTMLButtonElement;
+  const iframe = document.getElementById("hidden_iframe") as HTMLIFrameElement;
 
   // Captcha Logic from DinaServer
-  const a = Math.ceil(Math.random() * 10);
-  const b = Math.ceil(Math.random() * 10);
-  const c = a + b;
+  let a = Math.ceil(Math.random() * 10);
+  let b = Math.ceil(Math.random() * 10);
+  let c = a + b;
 
   function GenerarCaptcha() {
     const hidden = document.getElementById("verificacionOculto") as HTMLInputElement;
@@ -638,15 +703,42 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   // Handle Submission
-  if (form && btn && btnText) {
+  if (form && btn && btnText && successMsg) {
     form.addEventListener("submit", (e) => {
       if (!ValidarCaptcha()) {
         e.preventDefault();
         alert("Por favor, resuelve correctamente la suma de verificación.");
         return;
       }
+      
+      // Mostrar estado de carga brevemente
       btn.classList.add("btn--disabled");
       btnText.textContent = "Enviando...";
+
+      // Escuchar el evento de carga del iframe para confirmar que se procesó
+      iframe.onload = () => {
+        form.style.display = "none";
+        successMsg.style.display = "flex";
+        successMsg.classList.add("fade-in");
+        window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+      };
+    });
+  }
+
+  // Reset Form
+  if (resetBtn && form && successMsg) {
+    resetBtn.addEventListener("click", () => {
+      form.reset();
+      form.style.display = "block";
+      successMsg.style.display = "none";
+      btn.classList.remove("btn--disabled");
+      btnText.textContent = "Enviar mensaje";
+      
+      // Regenerar Captcha
+      a = Math.ceil(Math.random() * 10);
+      b = Math.ceil(Math.random() * 10);
+      c = a + b;
+      GenerarCaptcha();
     });
   }
 </script>
