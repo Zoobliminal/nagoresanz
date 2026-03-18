@@ -186,17 +186,38 @@ const currentYear = new Date().getFullYear();
   </div>
 
   <div class="footer__bottom">
-    <div class="container">
+    <div class="container footer__bottom-container">
       <p>
         <a href="mailto:zoobliminal@gmail.com">webmaster</a>
         © {currentYear}
         Zoobliminal
       </p>
+      <div class="footer__bottom-links">
+        <a href="/legal">Aviso Legal</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
+  .footer__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .footer__bottom-links a {
+    color: rgba(250, 250, 247, 0.5);
+    font-size: var(--text-xs);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__bottom-links a:hover {
+    color: var(--color-accent-light);
+  }
+
   .footer {
     position: relative;
     color: var(--color-ivory);

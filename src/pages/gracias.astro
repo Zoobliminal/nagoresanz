@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="¡Gracias!"
+  description="Tu mensaje ha sido enviado correctamente. Nagore Sanz se pondrá en contacto contigo pronto."
+>
+  <section class="thanks section" id="thanks-section">
+    <div class="container container--narrow">
+      <div class="thanks__card glass-card fade-in">
+        <div class="thanks__icon">
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h1>¡Mensaje enviado con éxito!</h1>
+        <p>
+          Gracias por ponerte en contacto conmigo. He recibido tu mensaje correctamente y te responderé en un plazo máximo de 24-48 horas laborables.
+        </p>
+        <div class="thanks__actions">
+          <a href="/" class="btn btn--primary">Volver al inicio</a>
+          <a href="/blog" class="btn btn--secondary">Leer el blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thanks {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--header-height) + var(--space-4xl)) 0;
+    background: var(--gradient-warm);
+  }
+
+  .container--narrow {
+    max-width: 600px;
+  }
+
+  .thanks__card {
+    text-align: center;
+    padding: var(--space-3xl);
+  }
+
+  .thanks__icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(124, 154, 130, 0.1);
+    color: var(--color-secondary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .thanks__card h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+  }
+
+  .thanks__card p {
+    font-size: var(--text-base);
+    color: var(--color-charcoal);
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .thanks__actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .thanks__actions {
+      flex-direction: column;
+    }
+  }
+</style>

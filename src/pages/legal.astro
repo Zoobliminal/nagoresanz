@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Aviso Legal y Política de Privacidad"
+  description="Aviso legal, política de privacidad y protección de datos de Nagore Sanz, coach personal y ejecutiva."
+>
+  <section class="page-hero" id="page-hero-legal">
+    <div class="container">
+      <h1 class="page-hero__title fade-in">Aviso Legal</h1>
+      <p class="page-hero__subtitle fade-in delay-1">
+        Información legal, protección de datos y términos de uso
+      </p>
+    </div>
+  </section>
+
+  <section class="legal-content section" id="legal-section">
+    <div class="container container--narrow">
+      <div class="legal__text fade-in">
+        <h2>1. Identidad del titular</h2>
+        <p>
+          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, se informa que el titular del sitio web es <strong>Nagore Sanz</strong>, con domicilio en <strong>Av. de Santo Estevo de Morás, 15142 Arteixo, A Coruña</strong>.
+        </p>
+
+        <h2>2. Propiedad intelectual</h2>
+        <p>
+          Todos los contenidos de este sitio web, incluyendo textos, imágenes, logos y diseño, son propiedad de Nagore Sanz o de sus colaboradores y están protegidos por las leyes de propiedad intelectual e industrial.
+        </p>
+
+        <h2>3. Protección de Datos (RGPD)</h2>
+        <p>
+          De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa a los usuarios que los datos de carácter personal que faciliten a través del formulario de contacto serán tratados con la finalidad de gestionar su solicitud de información o servicios.
+        </p>
+        <p>
+          <strong>Responsable del tratamiento:</strong> Nagore Sanz.<br />
+          <strong>Finalidad:</strong> Responder a solicitudes de contacto y prestación de servicios de coaching.<br />
+          <strong>Base legal:</strong> El consentimiento inequívoco del interesado al enviar el formulario.<br />
+          <strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal.<br />
+          <strong>Derechos:</strong> Acceso, rectificación, supresión y otros derechos enviando un email a nagoresanz@nagoresanz.com.
+        </p>
+
+        <h2>4. Uso de Cookies</h2>
+        <p>
+          Este sitio web utiliza cookies propias y de terceros para mejorar la navegación y realizar tareas de análisis. Al navegar por este sitio web, usted acepta el uso de cookies.
+        </p>
+
+        <h2>5. Legislación aplicable</h2>
+        <p>
+          Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-2xl);
+    text-align: center;
+    background: var(--gradient-warm);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .page-hero__title {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+  }
+
+  .page-hero__subtitle {
+    font-family: var(--font-subheading);
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-primary-light);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .container--narrow {
+    max-width: 800px;
+  }
+
+  .legal__text {
+    line-height: 1.8;
+    color: var(--color-charcoal);
+  }
+
+  .legal__text h2 {
+    font-size: var(--text-xl);
+    margin: var(--space-2xl) 0 var(--space-lg);
+    color: var(--color-primary);
+    border-bottom: 1px solid rgba(124, 154, 130, 0.2);
+    padding-bottom: var(--space-xs);
+  }
+
+  .legal__text p {
+    margin-bottom: var(--space-md);
+    opacity: 0.85;
+  }
+
+  .legal__text strong {
+    color: var(--color-primary);
+  }
+</style>

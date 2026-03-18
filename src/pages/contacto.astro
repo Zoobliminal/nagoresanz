@@ -159,27 +159,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <form
             class="contact__form glass-card"
             id="contact-form"
-            action="https://formspree.io/f/xeerqzkw"
+            action="https://form-mailer.dinaserver.com/"
             method="POST"
+            enctype="multipart/form-data"
           >
             <h3>Envíame un mensaje</h3>
             <p class="contact__form-subtitle">
               Respondo en menos de 24 horas laborables.
             </p>
 
+            <!-- Datos de configuración del hosting (DinaServer) -->
+            <input type="hidden" name="redirigir" value="https://www.nagoresanz.com/gracias.html" />
+            <input type="hidden" name="recipe" value="zoobliminal@gmail.com" />
+            <input type="hidden" name="asunto" value="Envío formulario desde nagoresanz.com" />
+            <input type="hidden" name="required" value="nombre;email;textoLegal" />
+            <input type="hidden" name="dominio" value="nagoresanz.com" />
+            <input type="hidden" name="idioma" value="es" />
+
             <div class="contact__form-group">
-              <label for="name">Nombre completo *</label>
+              <label for="nombre">Nombre completo *</label>
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="nombre"
+                name="nombre"
                 required
                 placeholder="Tu nombre"
               />
             </div>
 
             <div class="contact__form-group">
-              <label for="email">Email *</label>
+              <label for="email">Cuenta de correo *</label>
               <input
                 type="email"
                 id="email"
@@ -190,48 +199,57 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
 
             <div class="contact__form-group">
-              <label for="phone">Teléfono</label>
+              <label for="telefono">Teléfono</label>
               <input
                 type="tel"
-                id="phone"
-                name="phone"
+                id="telefono"
+                name="telefono"
                 placeholder="+34 600 000 000"
               />
             </div>
 
             <div class="contact__form-group">
-              <label for="service">Servicio de interés</label>
-              <select id="service" name="service">
-                <option value="">Selecciona un servicio</option>
-                <option value="personal">Coaching Personal</option>
-                <option value="ejecutivo">Coaching Ejecutivo</option>
-                <option value="formacion">Formación y Talleres</option>
-                <option value="psicolistica">Metodología PSICOLISTICA</option>
-                <option value="otro">Otro</option>
-              </select>
+              <label for="queteinteresa">¿Qué servicio te interesa?</label>
+              <textarea
+                id="queteinteresa"
+                name="queteinteresa"
+                rows="3"
+                placeholder="Dime qué servicio buscas..."></textarea>
             </div>
 
             <div class="contact__form-group">
-              <label for="message">Mensaje *</label>
+              <label for="ayuda">¿Cómo puedo ayudarte? *</label>
               <textarea
-                id="message"
-                name="message"
+                id="ayuda"
+                name="ayuda"
                 required
-                rows="5"
-                placeholder="Cuéntame cómo puedo ayudarte..."></textarea>
+                rows="4"
+                placeholder="Cuéntame brevemente tu situación..."></textarea>
             </div>
 
-            <!-- Redirección tras envío (opcional) -->
-            <input
-              type="hidden"
-              name="_next"
-              value="https://nagoresanz.netlify.app/contacto"
-            />
-            <input
-              type="hidden"
-              name="_subject"
-              value="Nuevo mensaje desde la web Nagore Sanz"
-            />
+            <div class="contact__form-group contact__form-group--checkbox">
+              <input type="checkbox" id="legal" name="textoLegal" required />
+              <label for="legal">
+                Acepto las <a href="/legal" target="_blank">condiciones legales</a> y la política de privacidad. *
+              </label>
+            </div>
+
+            <div class="contact__form-group contact__form-group--captcha">
+              <label for="entradaVerificacion">Verificación de seguridad *</label>
+              <div class="contact__captcha-wrapper">
+                <span id="muestraVerificacion" class="contact__captcha-text"></span>
+                <input type="hidden" id="verificacionOculto" name="verificacionOculto"/>
+                <input
+                  type="text"
+                  id="entradaVerificacion"
+                  name="entradaVerificacion"
+                  required
+                  placeholder="?"
+                  style="width: 80px;"
+                />
+              </div>
+              <p class="contact__form-help">Resuelve esta sencilla suma para enviar el mensaje.</p>
+            </div>
 
             <button
               type="submit"
@@ -259,19 +277,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <script>
-    const form = document.getElementById("contact-form");
-    const btn = document.getElementById("submit-btn");
-    const btnText = document.getElementById("btn-text");
 
-    if (form && btn && btnText) {
-      form.addEventListener("submit", () => {
-        btn.classList.add("btn--disabled");
-        btnText.textContent = "Enviando...";
-        // El navegador enviará el formulario normalmente a Formspree
-      });
-    }
-  </script>
+
 
   <!-- Map Section -->
   <section class="map-section" id="map">
@@ -477,9 +484,64 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     min-height: 120px;
   }
 
+  .contact__form-group--checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .contact__form-group--checkbox input {
+    width: auto;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+
+  .contact__form-group--checkbox label {
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1.5;
+  }
+
+  .contact__form-group--checkbox a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+
+  .contact__form-group--captcha {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(124, 154, 130, 0.1);
+  }
+
+  .contact__captcha-wrapper {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__captcha-text {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-primary);
+    background: rgba(124, 154, 130, 0.1);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    font-family: monospace;
+    letter-spacing: 0.1em;
+  }
+
+  .contact__form-help {
+    font-size: var(--text-xs);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-md);
+  }
+
   .contact__form-submit {
     width: 100%;
     justify-content: center;
+    margin-top: var(--space-lg);
   }
 
   /* Map */
@@ -520,3 +582,71 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const btnText = document.getElementById("btn-text") as HTMLSpanElement;
+  const legalCheck = document.getElementById("legal") as HTMLInputElement;
+
+  // Captcha Logic from DinaServer
+  const a = Math.ceil(Math.random() * 10);
+  const b = Math.ceil(Math.random() * 10);
+  const c = a + b;
+
+  function GenerarCaptcha() {
+    const hidden = document.getElementById("verificacionOculto") as HTMLInputElement;
+    const muestra = document.getElementById("muestraVerificacion");
+    if (muestra && hidden) {
+      muestra.innerHTML = a + " + " + b + " = ";
+      hidden.value = c.toString();
+    }
+  }
+
+  function ValidarCaptcha() {
+    const inputField = document.getElementById("entradaVerificacion") as HTMLInputElement;
+    if (inputField.value == c.toString()) {
+      return true;
+    } else {
+      inputField.style.borderColor = "red";
+      inputField.style.color = "red";
+      return false;
+    }
+  }
+
+  // Initializations
+  GenerarCaptcha();
+
+  // Legal Checkbox logic
+  if (legalCheck && btn) {
+    btn.setAttribute("disabled", "disabled");
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    legalCheck.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      if (target.checked) {
+        btn.removeAttribute("disabled");
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+      } else {
+        btn.setAttribute("disabled", "disabled");
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+      }
+    });
+  }
+
+  // Handle Submission
+  if (form && btn && btnText) {
+    form.addEventListener("submit", (e) => {
+      if (!ValidarCaptcha()) {
+        e.preventDefault();
+        alert("Por favor, resuelve correctamente la suma de verificación.");
+        return;
+      }
+      btn.classList.add("btn--disabled");
+      btnText.textContent = "Enviando...";
+    });
+  }
+</script>
