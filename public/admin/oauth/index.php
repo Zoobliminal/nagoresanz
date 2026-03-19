@@ -4,8 +4,8 @@
    Host this file at: /admin/oauth/index.php
 */
 
-define('CLIENT_ID', 'Ov23lixUsV5a8hAl8Pxi'); // Cambia esto por tu Client ID de GitHub
-define('CLIENT_SECRET', '8026fa99082660b50d94578fa3d9eb8c45c31ec3'); // Cambia esto por tu Client Secret de GitHub
+define('CLIENT_ID', 'CLIENT ID'); // Cambia esto por tu Client ID de GitHub
+define('CLIENT_SECRET', 'CLIENT SECRET'); // Cambia esto por tu Client Secret de GitHub
 
 $redirect_uri = 'https://' . $_SERVER['HTTP_HOST'] . '/admin/oauth/index.php';
 
