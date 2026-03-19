@@ -1,4 +1,9 @@
-# Forzar la ejecución de PHP en este directorio para evitar descargas
-<Files "index.php">
-    SetHandler application/x-httpd-php
-</Files>
+# Desactivar ForceType para evitar que mande el archivo como binario
+AddType application/x-httpd-php .php
+RemoveHandler .php
+AddHandler php81-cgi .php
+
+# Si lo anterior falla, forzar la ejecución por defecto
+<FilesMatch "\.php$">
+    SetHandler "proxy:fcgi://127.0.0.1:9000"
+</FilesMatch>
