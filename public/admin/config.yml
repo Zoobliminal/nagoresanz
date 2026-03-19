@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: Zoobliminal/nagoresanz
+  branch: main
+  base_url: https://nagoresanz.com
+  auth_endpoint: /admin/oauth/index.php
 
 publish_mode: editorial_workflow
 
