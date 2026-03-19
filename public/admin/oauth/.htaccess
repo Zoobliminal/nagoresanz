@@ -1,0 +1,4 @@
+# Forzar la ejecución de PHP en este directorio para evitar descargas
+<Files "index.php">
+    SetHandler application/x-httpd-php
+</Files>
